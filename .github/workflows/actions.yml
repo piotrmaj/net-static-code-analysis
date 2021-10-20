@@ -15,9 +15,9 @@ jobs:
         run: dotnet tool install -g dotnet-format
       - name: Install dependencies
         run: dotnet restore
-      - name: Run linter
-        run: dotnet format --verify-no-changes
       - name: Build
         run: dotnet build --configuration Release --no-restore
       - name: Test
         run: dotnet test --no-restore --verbosity normal
+      - name: Run linter
+        run: dotnet format --verify-no-changes
