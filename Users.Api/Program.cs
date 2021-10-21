@@ -39,13 +39,13 @@ SeedData();
 void SeedData()
 {
     IUserRepository userRepository = app.Services.GetService<IUserRepository>();
-    int i = 1;
-    var now = DateTime.UtcNow;
+    var i = 1;
+    DateTime now = DateTime.UtcNow;
     userRepository.Add(new Users.Api.Models.User
     {
         Id = i++,
         Name = "Andrew",
-        BirthDate = new System.DateOnly(1990, 2, 10),
+        BirthDate = new DateOnly(1990, 2, 10),
     });
     userRepository.Add(new Users.Api.Models.User
     {
