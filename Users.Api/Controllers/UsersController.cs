@@ -1,7 +1,7 @@
-using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using Users.Api.Models;
+using Users.Api.Services;
 
 namespace Users.Api.Controllers
 {
@@ -9,15 +9,15 @@ namespace Users.Api.Controllers
     [Route("[controller]")]
     public class UsersController : Controller
     {
-        private readonly ILogger<UsersController> logger;
+        private readonly IUserService userService;
 
-        public UsersController(ILogger<UsersController> logger)
+        public UsersController(IUserService userService)
         {
-            this.logger = logger;
+            this.userService = userService;
         }
 
         [HttpGet]
         [Route("/")]
-        public IEnumerable<string> Get() => Array.Empty<string>();
+        public IEnumerable<UserDto> Get() => this.userService.GetAll();
     }
 }
