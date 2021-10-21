@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -38,11 +39,43 @@ SeedData();
 void SeedData()
 {
     IUserRepository userRepository = app.Services.GetService<IUserRepository>();
+    int i = 1;
+    var now = DateTime.UtcNow;
     userRepository.Add(new Users.Api.Models.User
     {
-        Id = 1,
+        Id = i++,
         Name = "Andrew",
         BirthDate = new System.DateOnly(1990, 2, 10),
+    });
+    userRepository.Add(new Users.Api.Models.User
+    {
+        Id = i++,
+        Name = "Greg",
+        BirthDate = new DateOnly(1994, now.Month, now.Day),
+    });
+    userRepository.Add(new Users.Api.Models.User
+    {
+        Id = i++,
+        Name = "John",
+        BirthDate = new DateOnly(1994, 11, 10),
+    });
+    userRepository.Add(new Users.Api.Models.User
+    {
+        Id = i++,
+        Name = "Annie",
+        BirthDate = new DateOnly(1994, 12, 30),
+    });
+    userRepository.Add(new Users.Api.Models.User
+    {
+        Id = i++,
+        Name = "Emma",
+        BirthDate = new DateOnly(1980, 5, 20),
+    });
+    userRepository.Add(new Users.Api.Models.User
+    {
+        Id = i++,
+        Name = "Olivia",
+        BirthDate = new DateOnly(1994, now.Month, now.Day + 1),
     });
 }
 
