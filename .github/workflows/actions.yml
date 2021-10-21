@@ -19,5 +19,5 @@ jobs:
         run: dotnet build --configuration Release --no-restore
       - name: Test
         run: dotnet test --no-restore --verbosity normal
-      - name: Run linter
-        run: dotnet format --verify-no-changes
+      # - name: Run linter
+      #   run: dotnet format --verify-no-changes
