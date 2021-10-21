@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Users.Api.Models;
 
 namespace Users.Api.Services

@@ -7,7 +7,7 @@ namespace Users.Api.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private readonly List<User> users = new ();
+        private readonly List<User> users = new();
 
         public User GetById(int id) => this.users.FirstOrDefault(u => u.Id == id);
 

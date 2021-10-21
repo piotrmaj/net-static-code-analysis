@@ -112,8 +112,6 @@ dotnet_diagnostic.IDE0046.severity = suggestion
 dotnet_style_prefer_compound_assignment = true:warning
 dotnet_style_prefer_simplified_interpolation = true:warning
 dotnet_style_prefer_simplified_boolean_expressions = true:warning
-# IDE0055" (Fix formatting)
-dotnet_diagnostic.IDE0055.severity  = none
 # Null-checking preferences
 dotnet_style_coalesce_expression = true:warning
 dotnet_style_null_propagation = true:warning
@@ -330,6 +328,8 @@ dotnet_diagnostic.SA1200.severity = none
 dotnet_diagnostic.SA1633.severity = none
 # SA0001XmlCommentAnalysisDisabled
 dotnet_diagnostic.SA0001.severity = none
+# KeywordsMustBeSpacedCorrectly
+dotnet_diagnostic.SA1000.severity = none
 
 # All constant fields must be PascalCase
 # https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1303.md
