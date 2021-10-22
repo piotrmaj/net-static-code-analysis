@@ -17,6 +17,7 @@ builder.Services
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IUserRepository, UserRepository>();
+builder.Services.AddSingleton<ITimeToNextBirthdayFormatter, TimeToNextBirthdayFormatter>();
 builder.Services.AddScoped<IUserService, UserService>();
 
 WebApplication app = builder.Build();

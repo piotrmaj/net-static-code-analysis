@@ -8,10 +8,12 @@ namespace Users.Api.Services
     public class UserService : IUserService
     {
         private readonly IUserRepository userRepository;
+        private readonly ITimeToNextBirthdayFormatter timeToNextBirthdayFormatter;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, ITimeToNextBirthdayFormatter timeToNextBirthdayFormatter)
         {
             this.userRepository = userRepository;
+            this.timeToNextBirthdayFormatter = timeToNextBirthdayFormatter;
         }
 
         public List<UserDto> GetAll() =>
@@ -19,8 +21,7 @@ namespace Users.Api.Services
             .GetAll()
             .Select(u => new UserDto
             {
-                Id = u.Id,
-                Name = u.Name,
+                Id = u.Id, Name = u.Name, TimeToNextBirthday = timeToNextBirthdayFormatter.Format(u.BirthDate)
             })
             .ToList();
     }
