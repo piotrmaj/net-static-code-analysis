@@ -21,7 +21,9 @@ namespace Users.Api.Services
             .GetAll()
             .Select(u => new UserDto
             {
-                Id = u.Id, Name = u.Name, TimeToNextBirthday = timeToNextBirthdayFormatter.Format(u.BirthDate)
+                Id = u.Id,
+                Name = u.Name,
+                TimeToNextBirthday = this.timeToNextBirthdayFormatter.Format(u.BirthDate),
             })
             .ToList();
     }
