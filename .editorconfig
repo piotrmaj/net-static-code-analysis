@@ -333,6 +333,8 @@ dotnet_diagnostic.SA0001.severity = none
 # KeywordsMustBeSpacedCorrectly
 dotnet_diagnostic.SA1000.severity = none
 
+dotnet_diagnostic.MY0001.severity = warning
+
 # All constant fields must be PascalCase
 # https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1303.md
 dotnet_naming_symbols.stylecop_constant_fields_group.applicable_accessibilities = public, internal, protected_internal, protected, private_protected, private
